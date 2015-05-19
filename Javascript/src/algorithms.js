@@ -16,19 +16,14 @@ Algorithms.digitalRoot = function (number) {
     return number;
   }
 
-  var tenFactor = 10;
-  var sum = 0;
+  var RADIX = 10;
   var num = number;
-
-  while (Math.floor(number/tenFactor) >= 10) {
-    tenFactor *= 10;
-  }
+  var sum = 0;
 
   while (num > 0) {
-    digit = Math.floor(num/tenFactor);
-    num -= digit * tenFactor;
+    digit = num % 10;
     sum += digit;
-    tenFactor /= 10;
+    num = parseInt(num/10, RADIX);
   }
 
   return this.digitalRoot(sum);
