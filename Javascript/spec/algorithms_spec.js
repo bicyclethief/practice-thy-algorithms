@@ -10,12 +10,17 @@ describe("digitalRoot", function() {
 
 describe("caesarCipher", function() {
   it("'hello' should return 'lipps'", function() {
-    expect(Algorithms.caesarCipher('hello')).toBe('lipps');
+    expect(Algorithms.caesarCipher('hello', 4)).toBe('lipps');
+  });
+
+  it("'hello world' should return 'lipps '", function() {
+    expect(Algorithms.caesarCipher('hello world', 4)).toBe('lipps asvph');
   });
 
   it("'abc' should return 'abc'", function() {
-    expect(Algorithms.caesarCipher('abc')).toBe('abc');
+    expect(Algorithms.caesarCipher('abc', 0)).toBe('abc');
   });
+
 });
 
 describe("commonSubstrings", function() {
