@@ -33,7 +33,25 @@ Algorithms.digitalRoot = function (number) {
 // Assume lowercase and no punctuation.
 // Preserve spaces.
 Algorithms.caesarCipher = function (string, shift) {
+  var PRESERVE = { 32: " " };
+  var A_CHAR_CODE = 97;
+  var NUM_LETTERS = 26;
+  var encoded = "";
 
+  // charCodeAt
+  for (var i = 0; i < string.length; i++) {
+    var letterCode = string.charCodeAt(i);
+    if (PRESERVE[letterCode] !== undefined) {
+      encoded += PRESERVE[letterCode];
+    }
+    else {
+      var unshiftedLetterPos = letterCode - A_CHAR_CODE;
+      var shiftedLetterPos = (unshiftedLetterPos + shift) % NUM_LETTERS;
+      encoded += String.fromCharCode(shiftedLetterPos + A_CHAR_CODE);
+    }
+  }
+
+  return encoded;
 };
 
 // Write a function that takes two strings and returns the longest common substring.
