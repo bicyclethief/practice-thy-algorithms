@@ -20,7 +20,6 @@ describe("caesarCipher", function() {
   it("'abc' should return 'abc'", function() {
     expect(Algorithms.caesarCipher('abc', 0)).toBe('abc');
   });
-
 });
 
 describe("commonSubstrings", function() {
