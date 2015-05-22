@@ -9,7 +9,20 @@ if(typeof Algorithms === "undefined") {
 // Keep repeating until there is only one digit in the result, called the "digital root".
 // Do not use string conversion within your method.
 Algorithms.digitalRoot = function (number) {
-
+  var sum = 0;
+  var remainder = 0;
+  var digital_sum = 0;
+  while(number > 0) {
+    remainder = number % 10;
+    sum += remainder;
+    number = Math.floor(number/10);
+  }
+  while (sum > 0) {
+    remainder = sum % 10;
+    digital_sum += remainder;
+    sum = Math.floor(sum/10);
+  }
+  return digital_sum;
 };
 
 // Write a function that takes a message and an increment amount and outputs the same letters shifted by that amount in the alphabet.
