@@ -29,7 +29,12 @@ Algorithms.digitalRoot = function (number) {
 // Assume lowercase and no punctuation.
 // Preserve spaces.
 Algorithms.caesarCipher = function (string, shift) {
-
+  string = string.toLowerCase();
+  var char_array = [];
+  for (i=0; i < string.length; i++) {
+    char_array.push(string.charCodeAt(i));
+  }
+  console.log(char_array);
 };
 
 // Write a function that takes two strings and returns the longest common substring.
