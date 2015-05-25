@@ -28,13 +28,22 @@ Algorithms.digitalRoot = function (number) {
 // Write a function that takes a message and an increment amount and outputs the same letters shifted by that amount in the alphabet.
 // Assume lowercase and no punctuation.
 // Preserve spaces.
+// a:97, z:122                                                                                                                  
 Algorithms.caesarCipher = function (string, shift) {
-  string = string.toLowerCase();
-  var char_array = [];
-  for (i=0; i < string.length; i++) {
-    char_array.push(string.charCodeAt(i));
-  }
-  console.log(char_array);
+  // var char_code_array = [];
+  // var letter_array = [];
+  // console.log(shift);
+  // for (i=0; i < string.length; i++) {
+  //   char_code_array.push(string.charCodeAt(i));
+    
+  //   char_code_array[i] += shift;
+  //   if (char_code_array[i]) {
+
+  //   }
+  //   letter_array.push(String.fromCharCode(char_code_array[i]));
+  // }
+
+  // console.log(letter_array.join(''));
 };
 
 // Write a function that takes two strings and returns the longest common substring.
