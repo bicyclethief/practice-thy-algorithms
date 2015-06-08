@@ -37,7 +37,15 @@ end
 # Write a function that takes a string and returns true if it's a palindrome, false if it's not.
 # Your solution should take less time and memory than rebuilding the string backward and comparing the two.
 def is_palindrome?(string)
-
+  end_char = -1
+  (string.length/2).times do |index|
+    unless string[index] == string[end_char]
+      return false
+    else
+      end_char -= 1
+    end
+  end
+  return true
 end
 
 # Implement the Folding Cipher.
