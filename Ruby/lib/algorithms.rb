@@ -20,8 +20,13 @@ end
 
 # Write a function that takes an array of integers and returns their sum.
 # Use recursion.
-def sum_rec(numbers)
-
+def sum_rec(numbers, sum = 0)
+  if numbers.length > 0
+    sum += numbers.pop
+    sum_rec(numbers, sum)
+  else
+    return sum
+  end
 end
 
 # Write a function which returns the first n elements from the fibonnacci sequence, given n.
