@@ -14,7 +14,7 @@ describe("caesarCipher", function() {
   });
 
   it("'abc' should return 'abc'", function() {
-    expect(Algorithms.caesarCipher('abc', 26)).toBe('abc');
+    expect(Algorithms.caesarCipher('abc', 52)).toBe('abc');
   });
 });
 

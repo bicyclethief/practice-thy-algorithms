@@ -28,27 +28,34 @@ Algorithms.digitalRoot = function (number) {
 // Write a function that takes a message and an increment amount and outputs the same letters shifted by that amount in the alphabet.
 // Assume lowercase and no punctuation.
 // Preserve spaces.
-// a:97, z:122                                                                                                                  
+// a:97, z:122                                                                                                                
 Algorithms.caesarCipher = function (string, shift) {
-  // var char_code_array = [];
-  // var letter_array = [];
-  // console.log(shift);
-  // for (i=0; i < string.length; i++) {
-  //   char_code_array.push(string.charCodeAt(i));
-    
-  //   char_code_array[i] += shift;
-  //   if (char_code_array[i]) {
-
-  //   }
-  //   letter_array.push(String.fromCharCode(char_code_array[i]));
-  // }
-
-  // console.log(letter_array.join(''));
+  var char_code_array = [];
+  var letter_array = [];
+  var shift = shift%26;
+  for (i=0; i < string.length; i++) {
+    char_code_array.push(string.charCodeAt(i));
+    if (string.charCodeAt(i) === 32) {
+      continue;
+    } else if(string.charCodeAt(i) + shift <= 122) {
+      char_code_array[i] += shift;
+    } else {
+      char_code_array[i] += (97 + (shift - (122 - string.charCodeAt(i))));
+    }
+    letter_array.push(String.fromCharCode(char_code_array[i]));
+  }
+  return letter_array.join('');
 };
 
 // Write a function that takes two strings and returns the longest common substring.
 Algorithms.commonSubstrings = function (stringOne, stringTwo) {
-
+  var length;
+  if (stringOne.length > stringTwo.length) {
+    length = stringOne.length;
+  } else {
+    length = stringTwo.length;
+  }
+  console.log(length);
 };
 
 // Write a function that takes an array of integers and returns their sum.
